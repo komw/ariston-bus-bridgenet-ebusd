@@ -8,11 +8,12 @@ if [[ ! -f "./secrets.sh" ]]; then
     echo "mqtthost=mqtt server host"
     echo "mqttuser=mqtt user"
     echo "mqttpass=mqtt password"
+    echo "ebusport=ebus serialport or wemos host"
     exit 1
 fi
 source secrets.sh
 
-ebusd -d 192.168.100.139:9999 --configpath=./configuration -f \
+ebusd -d $ebusport --configpath=./configuration -f \
 --enabledefine  --enablehex --mqtttopic=$mqtttopic --mqttport=$mqttport --mqttlog --mqtthost=$mqtthost --mqttuser=$mqttuser --mqttpass=$mqttpass \
 --loglevel="error" \
 --pollinterval=10 \

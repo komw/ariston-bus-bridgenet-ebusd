@@ -12,11 +12,21 @@ w,boiler,night_temp,Night temperature,,,,6371,night_temp,s,UIN,,,,,,,,,,,,,,,,,,
 #w,boiler,ebus_reset,Reset ebus,37,fe,2034,,ebus_reset,m,IGN,,,,,,,,,,,,,,,,,,,,,,
 
 
-*r,boiler,,,,3c,2000,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #direct_ask
-r1,boiler,boiler_pressure,Boiler circuit pressure,,,,7547,,s,IGN,,,,boiler_pressure,,UCH
+*r,boiler,,,,3c,2000,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r1,boiler,boiler_pressure,Boiler circuit pressure,,,,7547,press,s,IGN,,,,boiler_pressure,,UCH
 r1,boiler,heating_temp_out,heating temperature,,,,6810,heating_temp_out,s,UIR:2,,°C,,,,,,,,,,,,,,,,,,,,,,
 r1,boiler,heating_temp_return,heating return temperature,,,,6910,heating_temp_return,s,UIR:2,,°C,,,,,,,,,,,,,,,,,,,,,,
+
+#albo uir albo albo UIN, trzeba zweryfikowac w piecu
+r9,boiler,diverter_cycles,Number of diverter valve cycles,,,,40d2,diverter_cycles,s,IGN:1,,,,diverter_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r9,boiler,ignition_cycles,Number of ignition cycles,,,,42d8,ignition_cycles,s,IGN:1,,,,ignition_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r9,boiler,circulation_time,circulation time,,,,44aF,circulation_time,s,IGN:1,,,,circulation_time,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r9,boiler,boiler_life_time,Boiler Life Time,,,,50d9,boiler_life_time,s,IGN:1,,,,boiler_life_time,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r9,boiler,circulation_cycles,Number of circulation cycles,,,,44d2,circulation_cycles,s,IGN:1,,,,circulation_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r9,boiler,fan_cycles,Number of fan cycles,,,,4CD2,fan_cycles,s,IGN:1,,,,fan_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r9,boiler,hours_burner_on,Hours Burner On,,,,4bd1,hours_burner_on,s,IGN:1,,,,hours_burner_on,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+
 #broadcast
 r,boiler,room_temp,Room temperature,37,fe,200f,7118,room_temp,s,UIN,,°C,,,,,,,,,,,,,,,,,,,,,,
 r,boiler,day_temp,Day temperature,37,fe,200e,6271,day_temp,s,UIN,,°C,,,,,,,,,,,,,,,,,,,,,,

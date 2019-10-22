@@ -1,2 +1,4 @@
 .idea/*
 *.iml
+secrets.sh
+dump.log

@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+ebusd --configpath=./configuration -f --enablehex --loglevel=debug --checkconfig
 
 if [[ ! -f "./secrets.sh" ]]; then
     echo "./secrets doesnt exist"
@@ -17,10 +19,10 @@ ebusd -d $ebusport --configpath=./configuration -f \
 --enabledefine  --enablehex --mqtttopic=$mqtttopic --mqttport=$mqttport --mqttlog --mqtthost=$mqtthost --mqttuser=$mqttuser --mqttpass=$mqttpass \
 --loglevel="error" \
 --pollinterval=10 \
---sendretries=5 \
+--sendretries=4 \
 --mqttjson \
---acquireretries=10 \
---latency=30000 \
---lograwdata=bytes \
---lograwdatafile=dump.log \
---lograwdatasize=100000
+--acquireretries=5 \
+--latency=30000 
+#--lograwdata=bytes \
+#--lograwdatafile=dump.log \
+#--lograwdatasize=100000

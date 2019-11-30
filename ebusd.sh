@@ -18,7 +18,7 @@ source secrets.sh
 ebusd -d $ebusport --configpath=./configuration -f \
 --enabledefine  --enablehex --mqtttopic=$mqtttopic --mqttport=$mqttport --mqttlog --mqtthost=$mqtthost --mqttuser=$mqttuser --mqttpass=$mqttpass \
 --loglevel="error" \
---pollinterval=10 \
+--pollinterval=5 \
 --sendretries=4 \
 --mqttjson \
 --acquireretries=5 \

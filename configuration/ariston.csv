@@ -20,13 +20,13 @@ r2,boiler,heating_temp_return,heating return temperature,,,,6910,ign,s,IGN:1,,,,
 r1,boiler,flame_power,Flame Power,,,,c104,ign,s,IGN:1,,,,flame_power,s,HEX,,hex,,,,,,,,,,,,,,,,,,,,,,
 
 #albo uir albo albo UIN, trzeba zweryfikowac w piecu
-r7,boiler,diverter_cycles,Number of diverter valve cycles,,,,40d2,ign,s,IGN:1,,,,diverter_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
-r7,boiler,ignition_cycles,Number of ignition cycles,,,,42d8,ign,s,IGN:1,,,,ignition_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
-r7,boiler,circulation_time,circulation time,,,,44aF,ign,s,IGN:1,,,,circulation_time,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
-r7,boiler,boiler_life_time,Boiler Life Time,,,,50d9,ign,s,IGN:1,,,,boiler_life_time,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
-r7,boiler,circulation_cycles,Number of circulation cycles,,,,44d2,ign,s,IGN:1,,,,circulation_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
-r7,boiler,fan_cycles,Number of fan cycles,,,,4CD2,ign,s,IGN:1,,,,fan_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
-r7,boiler,hours_burner_on,Hours Burner On,,,,4bd1,ign,s,IGN:1,,,,hours_burner_on,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r5,boiler,diverter_cycles,Number of diverter valve cycles,,,,40d2,ign,s,IGN:1,,,,diverter_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r5,boiler,ignition_cycles,Number of ignition cycles,,,,42d8,ign,s,IGN:1,,,,ignition_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r5,boiler,circulation_time,circulation time,,,,44aF,ign,s,IGN:1,,,,circulation_time,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r5,boiler,boiler_life_time,Boiler Life Time,,,,50d9,ign,s,IGN:1,,,,boiler_life_time,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r5,boiler,circulation_cycles,Number of circulation cycles,,,,44d2,ign,s,IGN:1,,,,circulation_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r5,boiler,fan_cycles,Number of fan cycles,,,,4CD2,ign,s,IGN:1,,,,fan_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r5,boiler,hours_burner_on,Hours Burner On,,,,4bd1,ign,s,IGN:1,,,,hours_burner_on,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
 
 #broadcast
 r,boiler,room_temp,Room temperature,37,fe,200f,7118,room_temp,s,UIN,,°C,,,,,,,,,,,,,,,,,,,,,,

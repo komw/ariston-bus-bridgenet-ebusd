@@ -38,7 +38,7 @@ r,boiler,heating_pre_temp,Heating temperature,37,fe,200f,6047,heating_pre_temp,s
 r,boiler,dwh_pre_temp,DWH temperature,37,fe,200f,6147,dwh_pre_temp,s,UIN,,°C,,,,,,,,,,,,,,,,,,,,,,
 r,boiler,external_temp,External temperature,37,fe,200f,7647,external_temp,s,UIN,,°C,,,,,,,,,,,,,,,,,,,,,,
 r,boiler,comfort_mode,DWH comfort mode,37,fe,200f,c028,comfort_mode,s,UIN,0=off;1=time;2=on,,,,,,,,,,,,,,,,,,,,,,,
-r,boiler,boiler_status,Boiler Status,,fe,2010,c04b,boilerstatus,s,UCH,1=standby;2=heating;3=water;5=circulating;24=comfort,,,,,IGN:3,,,,,,IGN,,,,,
+r,boiler,boiler_status,Boiler Status,,fe,2010,c04b,boilerstatus,s,UCH,1=standby;2=heating;3=water;4=heating hot water tank;5=circulating;24=comfort,,,,,IGN:3,,,,,,IGN,,,,,
 r,boiler,ebus_thermostat_reset,Reset termostat,70,fe,2036,0035,ebus_thermostat_reset,s,UCH
 r,boiler,ebus_boiler_reset,Reset Boiler,37,fe,2036,,ebus_boiler_reset,s,UCH
 

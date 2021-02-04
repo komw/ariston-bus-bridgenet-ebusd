@@ -17,12 +17,12 @@ source secrets.sh
 
 ebusd -d $ebusport --configpath=./configuration -f \
 --enabledefine  --enablehex --mqtttopic=$mqtttopic --mqttport=$mqttport --mqttlog --mqtthost=$mqtthost --mqttuser=$mqttuser --mqttpass=$mqttpass \
---loglevel="error" \
+--loglevel="debug" \
 --pollinterval=7 \
 --sendretries=2 \
---mqttjson \
---acquireretries=2 \
---latency=50000
+--mqttjson 
+#--acquireretries=2 \
+#--latency=50000 \
 #--lograwdata=bytes \
 #--lograwdatafile=dump.log \
 #--lograwdatasize=100000

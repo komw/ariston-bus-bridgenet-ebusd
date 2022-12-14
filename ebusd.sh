@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-ebusd --configpath=./configuration -f --enablehex --loglevel=debug --checkconfig
+./ebusd --configpath=./configuration -f --enablehex --loglevel=debug --checkconfig
 
 if [[ ! -f "./secrets.sh" ]]; then
     echo "./secrets doesnt exist"
@@ -15,14 +15,13 @@ if [[ ! -f "./secrets.sh" ]]; then
 fi
 source secrets.sh
 
-ebusd -d $ebusport --configpath=./configuration -f \
+./ebusd -d $ebusport --configpath=./configuration -f \
 --enabledefine  --enablehex --mqtttopic=$mqtttopic --mqttport=$mqttport --mqttlog --mqtthost=$mqtthost --mqttuser=$mqttuser --mqttpass=$mqttpass \
---loglevel="debug" \
---pollinterval=7 \
---sendretries=2 \
---mqttjson 
-#--acquireretries=2 \
-#--latency=50000 \
-#--lograwdata=bytes \
-#--lograwdatafile=dump.log \
-#--lograwdatasize=100000
+--loglevel="info" \
+--pollinterval=30 \
+--sendretries=10 \
+--mqttjson \
+--acquireretries=5 \
+--acquiretimeout=10 \
+--receivetimeout=25 \
+--latency=10 

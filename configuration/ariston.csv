@@ -1,48 +1,93 @@
 # type (r[1-9];w;u),class,name,comment,QQ,ZZ,PBSB,ID,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,AG,AH
 *r,broadcast,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-*b,broadcast,,,,FE,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#*b,broadcast,,,,FE,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 *w,broadcast,,,,FE,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-w,,queryexistence,Inquiry of existence,,FE,07FE,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#w,,queryexistence,Inquiry of existence,,FE,07FE,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 *w,boiler,,,7f,fe,2020,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-w,boiler,winter_mode,Winter mode,,,,0120,winter_mode,s,ULR,17769216=on;992000=off,,,,,,,,,,,,,,,,,,,,,,,,
-w,boiler,comfort_mode,DWH comfort mode,,,,c028,comfort_mode,s,UCH,0=off;1=time;2=on,,,,,,,,,,,,,,,,,,,,,,
+
+w,boiler,winter_mode,Winter mode,,,200f,0120,winter_mode,s,BCD,0=off;1=on,,
+r,boiler,winter_mode,Winter mode,37,fe,200f,0120,winter_mode,s,BCD,0=off;1=on,,
+
+
+w,boiler,comfort_mode,DWH comfort mode,,,,c028,comfort_mode,s,BCD,0=off;1=time;2=on,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,comfort_mode,DWH comfort mode,37,fe,200f,c028,comfort_mode,s,BCD,0=off;1=time;2=on,,,,,,,,,,,,,,,,,,,,,,,
+
+
+
 w,boiler,day_temp,Day temperature,,,,6271,day_temp,s,SIN,,,,,,,,,,,,,,,,,,,,,,,
 w,boiler,night_temp,Night temperature,,,,6371,night_temp,s,SIN,,,,,,,,,,,,,,,,,,,,,,,
-#w,boiler,ebus_reset,Reset ebus,37,fe,2034,,ebus_reset,m,IGN,,,,,,,,,,,,,,,,,,,,,,
 
 
 #direct_ask
 *r,boiler,,,,3c,2000,,,,,,,,,,,,,,,,,,,,,,,,,,,
-r2,boiler,boiler_pressure,Boiler circuit pressure,,,,7547,ign,s,IGN,,,,boiler_pressure,,UCH
-r2,boiler,heating_temp_out,heating temperature,,,,6810,ign,s,IGN:1,,,,heating_temp_out,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
-r2,boiler,heating_temp_return,heating return temperature,,,,6910,ign,s,IGN:1,,,,heating_temp_return,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
-r1,boiler,flame_power,Flame Power,,,,c104,ign,s,IGN:1,,,,flame_power,s,HEX,,hex,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,boiler_pressure,Boiler circuit pressure,,,,7547,ign,s,IGN,,,,boiler_pressure,,UCH
 
-#albo uir albo albo UIN, trzeba zweryfikowac w piecu
-r5,boiler,diverter_cycles,Number of diverter valve cycles,,,,40d2,ign,s,IGN:1,,,,diverter_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
-r5,boiler,ignition_cycles,Number of ignition cycles,,,,42d8,ign,s,IGN:1,,,,ignition_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
-r5,boiler,circulation_time,circulation time,,,,44aF,ign,s,IGN:1,,,,circulation_time,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
-r5,boiler,boiler_life_time,Boiler Life Time,,,,50d9,ign,s,IGN:1,,,,boiler_life_time,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
-r5,boiler,circulation_cycles,Number of circulation cycles,,,,44d2,ign,s,IGN:1,,,,circulation_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
-r5,boiler,fan_cycles,Number of fan cycles,,,,4CD2,ign,s,IGN:1,,,,fan_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
-r5,boiler,hours_burner_on,Hours Burner On,,,,4bd1,ign,s,IGN:1,,,,hours_burner_on,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,heating_temp_out,heating temperature,,,,6810,ign,s,IGN:1,,,,heating_temp_out,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,heating_temp_return,heating return temperature,,,,6910,ign,s,IGN:1,,,,heating_temp_return,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,diverter_cycles,Number of diverter valve cycles,,,,40d2,ign,s,IGN:1,,,,diverter_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,ignition_cycles,Number of ignition cycles,,,,42d8,ign,s,IGN:1,,,,ignition_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,circulation_time,circulation time,,,,44aF,ign,s,IGN:1,,,,circulation_time,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,boiler_life_time,Boiler Life Time,,,,50d9,ign,s,IGN:1,,,,boiler_life_time,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,circulation_cycles,Number of circulation cycles,,,,44d2,ign,s,IGN:1,,,,circulation_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,fan_cycles,Number of fan cycles,,,,4CD2,ign,s,IGN:1,,,,fan_cycles,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,hours_burner_on,Hours Burner On,,,,4bd1,ign,s,IGN:1,,,,hours_burner_on,,UIN,,,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,flame_active,Flame active,,,,0e11,ign,s,IGN:1,,,,flame_active,s,BCD,0=off;1=on,,
+r,boiler,fan_speed,Boiler Fan Speed,,,,4013,,s,IGN:1,,,,fan_speed,,UIN,,rpm
 
 #broadcast
 r,boiler,room_temp,Room temperature,37,fe,200f,7118,room_temp,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
 r,boiler,day_temp,Day temperature,37,fe,200e,6271,day_temp,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
+
 r,boiler,night_temp,Night temperature,37,fe,200e,6371,night_temp,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
-r,boiler,heating_flame,Heating in progress,,fe,2010,0c19,heating_flame,s,IGN:1,,,,,,IGN:1,,,,,,IGN:1,,,,,,IGN:1,,,,,,IGN:1,,,,,,IGN:1,,,,,,IGN:1,,,,,,IGN:1,,,,,,IGN:1,,,,,,IGN:1,,,,,,IGN:1,,,,,,IGN:1,,,,heating_flame,,UCH,1=on;0=off,,,,,
-r,boiler,winter_mode,Winter mode,37,fe,200f,0120,winter_mode,s,UIN,0=off;1=on,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,external_temp,External temperature,,fe,200f,7647,external_temp,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
+
+
+
 r,boiler,heating_pre_temp,Heating temperature,37,fe,200f,6047,heating_pre_temp,s,SIN,,°C,,,,,,,,,,,,,,,,,
 r,boiler,dwh_pre_temp,DWH temperature,37,fe,200f,6147,dwh_pre_temp,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
-r,boiler,external_temp,External temperature,37,fe,200f,7647,external_temp,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
-r,boiler,comfort_mode,DWH comfort mode,37,fe,200f,c028,comfort_mode,s,UIN,0=off;1=time;2=on,,,,,,,,,,,,,,,,,,,,,,,
-r,boiler,boiler_status,Boiler Status,,fe,2010,c04b,boilerstatus,s,UCH,1=standby;2=heating;3=water;4=heating hot water tank;5=circulating;24=comfort;51=low water pressure;52=no flame,,,,,IGN:3,,,,,,IGN,,,,,
+
+##r,boiler,boiler_status,Boiler Status,,fe,2010,c04b,boilerstatus,s,UCH,1=standby;2=heating;3=water;4=heating hot water tank;5=circulating;24=comfort;51=low water pressure;52=no flame,,,,,IGN:3,,,,,,IGN,,,,,
 r,boiler,ebus_thermostat_reset,Reset termostat,70,fe,2036,0035,ebus_thermostat_reset,s,UCH
 r,boiler,ebus_boiler_reset,Reset Boiler,37,fe,2036,,ebus_boiler_reset,s,UCH
 
-#r1,boiler,heating_tank2,heating tank 2,,,,6510,heating_tank2,s,UIR:2,,°C,,,,,,,,,,,,,,,,,,,,,,
-#r1,boiler,heating_tank,heating tank,,,,6210,heating_tank,s,UIR:2,,°C,,,,,,,,,,,,,,,,,,,,,,
 r,boiler,overwritten_until,Overwritten until time,37,fe,2073,,overwritten_until,m,SIN;VTM,,,,,,,,,,,,,,,,,,,,,,,
 
+##new 
+w,boiler,heat_therm_type_selection,Heating Thermoreg Type Selection,,fe,2020,C079,heat_therm_type,s,BCD,
+
+
+
+
+r,boiler,heat_slope,Heat Slope,37,fe,200e,6a71,heat_slope,s,SIN
+w,boiler,heat_slope,Heat Slope,,,,6a71,heat_slope,s,SIN,,,,,,,,,,,,,,,,,,,,,,,
+
+
+#r,boiler,heat_slope,Heat Slope,37,fe,200e,6a71,heat_slope,s,IGN:1,,,,,,UIN,100
+#w,boiler,heat_slope,Heat Thermoreg Slope,,70,2001,6a71,heat_slope,s,UIN,,°C,,
+
+r,boiler,pump_max_pwm,Pump Max PWM,,3c,2000,c928,,s,IGN:1,,,,,s,UCH,,pct
+r,boiler,pump_min_pwm,Pump Min PWM,,3c,2000,ca28,,s,IGN:1,,,,,s,UCH,,pct
+
+r,boiler,heat_offset,Heat Thermoreg Offset,,18,2000,6471,heat_offset,s,IGN:1,,,,,,SIN,10
+w,boiler,heat_offset,Heat Thermoreg Offset,,fe,2020,6471,heat_offset,s,SIN,,°C,
+
+r,boiler,heat_room_temp_infl,Heating Room Temp Influence,,18,2000,c279,heat_room_temp_infl,s,IGN:1,,,,,,UCH
+w,boiler,heat_room_temp_infl,Heating Room Temp Influence,,fe,2020,c279,heat_room_temp_infl,s,UCH
+
+r,boiler,therm_type_selection,Heating Thermoreg Type Selection,,18,2000,C079,heat_therm_type_selection,s,IGN:1,,,,,,BCD,0=fixed_temp;1=basic_on_off;2=outdoor_temp_only;3=room_temp_only;4=outdoor_and_room
+r,boiler,last_error,Boiler Last Error,,3c,2002,040000,code,s,ULG,197=801-Calibration Error;44=5P6-Missing Flame;73=3P9-Scheduled Maintenance Needed,,,date,s,HCD:3,,,,time,s,HTM
+r,boiler,boiler_status,Boiler Status,,fe,2010,c04b,boiler_status,s,UCH,1=standby;2=heating;3=water;4=water tank;5=circulating;23=manual test;24=comfort;31=gas_circuit_deaeration;36=auto_calibration;51=low_water_pressure;52=no_flame,,,,,IGN:3,,,,,,IGN,,,,,
+
+r,boiler,dhw_comfort_temp,DHW Comfort Temp,,fe,200e,6126,dhw_comfort_temp,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
+w,boiler,dhw_comfort_temp,DHW Comfort Temp,,fe,2020,6126,dhw_comfort_temp,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
+
+r,boiler,dhw_economy_temp,DHW Economy Temp,,fe,200e,6226,dhw_economy_temp,s,SIN,,°C,,,,,,,,,,,,,,,,,,,,,,
+r,boiler,dhw_flowmeter,Boiler DHW Flowmeter,,3c,2000,6847,,s,IGN:1,,,,dhw_flowmeter,,UIN,10,L
+r,boiler,heat_mode,HV IN 1,,18,2000,1c22,heat_mode,s,IGN:1,,,,,,BCD,0=green;1=standard
+
+
+r,gateway,gateway_wifi_state,Gateway Wifi,,84,2000,cc4b,,s,IGN:1,,,,,,UCH,0=off;1=initalizing;2=idle;3=ap_initializing;4=ap_mode;5=conecting;6=wifi_connected;7=cloud_init;8=cloud_connected;9=error
+r,gateway,gateway_wifi_signal,Gateway Wifi Signal Level,,84,2000,c3f0,,s,IGN:1,,,,,,UCH
+r,gateway,gateway_activation_state,Gateway Activation,,84,2000,c4f0,,s,IGN:1,,,,,,UCH,0=not_connected;1=not_activated;2=activated
+r,gateway,gateway_sw_update,Gateway SW Update,,84,2000,c89c,,s,IGN:1,,,,,,UCH,0=initializing;1=waiting;2=upd_micro_1;3=upd_micro_2

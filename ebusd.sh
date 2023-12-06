@@ -18,10 +18,12 @@ source secrets.sh
 ./ebusd -d $ebusport --configpath=./configuration -f \
 --enabledefine  --enablehex --mqtttopic=$mqtttopic --mqttport=$mqttport --mqttlog --mqtthost=$mqtthost --mqttuser=$mqttuser --mqttpass=$mqttpass \
 --loglevel="info" \
+--mqttjson \
+--generatesyn \
+--receivetimeout=5000 \
+--latency=20000 \
 --pollinterval=30 \
 --sendretries=10 \
---mqttjson \
 --acquireretries=5 \
---acquiretimeout=10 \
---receivetimeout=25 \
---latency=10 
+--acquiretimeout=20 \
+--latency=10
